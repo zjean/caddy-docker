@@ -1,11 +1,11 @@
 ARG CADDY_VERSION=2.7.6
-ARG CADDY_DOCKER_PROXY_VERSION=v2.8.9
+ARG CADDY_DOCKER_PROXY_VERSION=v2.8.11
 
 FROM caddy:${CADDY_VERSION}-builder AS builder
 
 RUN xcaddy build \
     --with github.com/lucaslorentz/caddy-docker-proxy/v2@${CADDY_DOCKER_PROXY_VERSION} \
-    --with github.com/zjean/transip
+    --with github.com/libdns/transip
 
 FROM caddy:${CADDY_VERSION}
 
