@@ -5,8 +5,9 @@ FROM caddy:${CADDY_VERSION}-builder AS builder
 
 RUN xcaddy build \
   --with github.com/lucaslorentz/caddy-docker-proxy/v2@${CADDY_DOCKER_PROXY_VERSION} \
-  --with github.com/libdns/transip \
-  --with mijnhost=github.com/zjean/libdns-mijnhost@0.0.1
+  --with github.com/caddy-dns/transip \
+  --with github.com/caddy-dns/mijnhost
+
 
 FROM caddy:${CADDY_VERSION}
 
